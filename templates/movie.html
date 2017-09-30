@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Movie{% endblock %}
+
+{% block content %}
+
+      <div class="page-header">
+        <h1>{{ movie.title }}</h1>
+      </div>
+
+      {% if movie.year %}
+      <div class="row">
+        <div class="col-sm-2">Year:</div>
+        <div class="col-sm-10">{{ movie.year }}</div>
+      </div>
+      {% endif %}
+
+{% endblock %}
