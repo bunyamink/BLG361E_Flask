@@ -8,14 +8,21 @@
     </div>
     
     {% if movies %}
-      <ul class="list-unstyled">
-        {% for movie_id, movie in movies %}
-        <li>
-          <a href="{{ url_for('site.movie_page', movie_id=movie_id) }}">{{ movie.title }}</a> 
-          {% if movie.year %} ({{ movie.year }}) {% endif %}
-        </li>
-        {% endfor %}
-      </ul>
+      <form role="form" action="" method="post" name="movies" class="form-horizontal">
+        <ul class="list-unstyled">
+          {% for movie_id, movie in movies %}
+          <li>
+            <input type="checkbox" name="movie_ids" value="{{ movie_id }}" />
+            <a href="{{ url_for('site.movie_page', movie_id=movie_id) }}">
+              {{ movie.title }}
+              {% if movie.year %} ({{ movie.year }}) {% endif %}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <button type="submit" name="delete" class="btn btn-primary">Delete</button>
+      </form>
     {% endif %}
       
 {% endblock %}

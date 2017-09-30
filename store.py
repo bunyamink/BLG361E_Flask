@@ -10,6 +10,9 @@ class Store:
 	
 	def delete_movie(self, movie_id):
 		del self.movies[movie_id]
+		
+	def update_movie(self, movie):
+		self.movies[movie._id] = movie		
 
 	def get_movie(self, movie_id):
 		return self.movies[movie_id]
