@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My Movies - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    
+    <header>
+      <ul>
+        <li><a href="{{ url_for('site.home_page') }}">Home</a></li>
+        <li><a href="{{ url_for('site.movies_page') }}">List movies</a></li>
+      </ul>
+    </header>
+    
+    {% block content %}{% endblock %}
+
+    <footer>
+      &copy; 2016, BJWolf
+    </footer>
+  </body>
+</html>
